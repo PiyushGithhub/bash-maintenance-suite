@@ -1,0 +1,11 @@
+# Example crontab for Bash Maintenance Suite
+# Edit with `crontab -e` and adjust paths.
+
+# Daily backup at 02:30
+30 2 * * * /path/to/bash-maintenance-suite/scripts/backup.sh >> /path/to/bash-maintenance-suite/logs/cron.log 2>&1
+
+# Daily update & cleanup at 03:15
+15 3 * * * /path/to/bash-maintenance-suite/scripts/update_cleanup.sh >> /path/to/bash-maintenance-suite/logs/cron.log 2>&1
+
+# Every 30 minutes log scan
+*/30 * * * * /path/to/bash-maintenance-suite/scripts/log_monitor.sh --scan >> /path/to/bash-maintenance-suite/logs/cron.log 2>&1
